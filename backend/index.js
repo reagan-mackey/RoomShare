@@ -9,6 +9,7 @@ require("./config/passport");
 require("dotenv").config();
 
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users")
 
 app.use(
     cookieSession({ name: "session", keys: ["lama"], maxAge: 259200 })
@@ -25,7 +26,10 @@ app.use(
     })
 );
 
+app.use(express.json());
+
 app.use("/auth", authRoute);
+app.use("/users", userRoute);
 
 const start = () => {
     mongoose.connect(process.env.MONGO_URL)
