@@ -24,7 +24,19 @@ router.get("/login/success", (req, res) => {
         res.status(200).json({
             success: true,
             message: "Login success",
-            user: req.user,
+            user: {
+                id: req.user.id,
+                firstName: req.user.firstName,
+                lastName: req.user.lastName,
+                email: req.user.email,
+                profilePicture: req.user.profilePicture,
+                city: req.user.city,
+                state: req.user.state,
+                gender: req.user.gender,
+                major: req.user.major,
+                startDate: req.user.startDate,
+                endDate: req.user.endDate
+            }
         });
     }
 });
