@@ -6,7 +6,7 @@ const UserController = require("../controllers")
 router.get("/", async (req, res) => {
     try {
         const users = await UserController.getUsers();
-        res.status(200).json({ data: users });
+        res.status(200).json({ users });
     } catch (error) {
         res.status(500).json({ message: "Error with fetching all users", data: null });
     }
@@ -19,7 +19,7 @@ router.get("/search", async (req, res) => {
 
     try {
         const users = await UserController.getUsersBySearch(city, state, gender, major, startDate, endDate);
-        res.status(200).json({ data: users });
+        res.status(200).json({ users });
     } catch (error) {
         res.status(500).json({ message: error.message, data: null });
     }
@@ -32,7 +32,7 @@ router.patch("/:id", async (req, res) => {
 
     try {
         const updatedUser = await UserController.updateUser(userId, updateFields);
-        res.status(200).json({ data: updatedUser });
+        res.status(200).json({ updatedUser });
     } catch (error) {
         res.status(500).json({ message: error.message, data: null });
     }
@@ -44,7 +44,7 @@ router.get("/:id", async (req, res) => {
 
     try {
         const user = await UserController.getUserById(userId);
-        res.status(200).json({ data: user });
+        res.status(200).json({ user });
     } catch (error) {
         res.status(500).json({ message: error.message, data: null });
     }
