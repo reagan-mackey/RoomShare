@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Public+Sans&display=swap');
 
-*{
+* {
     margin: 0;
     background-attachment: fixed;
-    background-color: white;
     font-family: 'Public Sans', sans-serif;
 }
 
-.display-profile-page{
+.display-profile-page {
     width: 100vw;
     height: 100vh;
 }
 
-.navbar{
+.navbar {
     padding-top: 25px;
     padding-left: 60px;
     padding-right: 60px;
@@ -23,7 +22,7 @@
 }
 
 
-.navbar-logo h2{
+.navbar-logo h2 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 45px;
     font-weight: 600;
@@ -33,9 +32,9 @@
     -webkit-text-fill-color: transparent;
 }
 
-.profile-card-panel{
+.profile-card-panel {
     width: 60%;
-    height: 50%;
+    height: 55%;
     margin-left: 15%;
     border-radius: 20px;
     border: 1px solid #C651E3;
@@ -48,21 +47,21 @@
     padding: 50px;
 }
 
-.user-name{
+.user-name {
     float: left;
     font-size: 30px;
     height: fit-content;
     width: fit-content;
 }
 
-.user-name h2{
+.user-name h2 {
     font-family: 'Public Sans', sans-serif;
     font-weight: 200;
     margin-top: 15px;
     text-align: left;
 }
 
-.user-info{
+.user-info {
     float: right;
     height: fit-content;
     width: 50%;
@@ -70,7 +69,7 @@
     justify-items: center;
 }
 
-.user-info p{
+.user-info p {
     font-size: 20px;
     padding-top: 20px;
     text-align: left;
@@ -78,7 +77,7 @@
 }
 
 
-.user-info em{
+.user-info em {
     background: linear-gradient(to right, #7F4FE7, #C651E3);
     background-clip: text;
     -webkit-background-clip: text;
@@ -86,7 +85,7 @@
     font-style: normal;
 }
 
-.back-btn-div{
+.back-btn-div {
     height: fit-content;
     width: fit-content;
     margin-top: 25px;
@@ -94,7 +93,7 @@
 }
 
 
-.back-btn{
+.back-btn {
     height: 50px;
     width: 150px;
     border-radius: 25px;
@@ -106,6 +105,6 @@
     color: white;
 }
 
-button:hover{
+button:hover {
     box-shadow: 2px 2px 2px 2px #baa0f1;
 }

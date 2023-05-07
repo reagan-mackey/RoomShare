@@ -36,7 +36,8 @@ router.get("/login/success", (req, res) => {
                 gender: req.user.gender,
                 major: req.user.major,
                 startDate: req.user.startDate,
-                endDate: req.user.endDate
+                endDate: req.user.endDate,
+                hobbies: req.user.hobbies,
             }
         });
     }

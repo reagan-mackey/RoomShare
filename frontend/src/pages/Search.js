@@ -65,7 +65,6 @@ const Search = () => {
     };
 
     if (isLoading) {
-
         return <>
             <div className="navbar">
                 <div className="navbar-logo">
@@ -78,7 +77,6 @@ const Search = () => {
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh" }}><CircularProgress /></div>
         </>
     }
-
 
     return (
         <>
@@ -118,7 +116,7 @@ const Search = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <button className="search-button" onClick={handleClick} style={{ marginTop: "1rem", marginBottom: "1rem" }}>back</button>
+                <button className="back-btn" onClick={handleClick} style={{ marginTop: "1rem", marginBottom: "1rem" }}>back</button>
             </Container>
         </>
     );
