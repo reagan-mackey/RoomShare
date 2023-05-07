@@ -35,19 +35,19 @@ const getUsersBySearch = (User) =>
         const query = {};
 
         if (city) {
-            query.city = city;
+            query.city = { $regex: new RegExp("^" + city + "$", "i") };
         }
 
         if (state) {
-            query.state = state;
+            query.state = { $regex: new RegExp("^" + state + "$", "i") };
         }
 
         if (gender) {
-            query.gender = gender;
+            query.gender = { $regex: new RegExp("^" + gender + "$", "i") };
         }
 
         if (major) {
-            query.major = major;
+            query.major = { $regex: new RegExp("^" + major + "$", "i") };
         }
 
         if (startDate) {
