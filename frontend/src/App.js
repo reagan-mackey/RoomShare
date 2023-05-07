@@ -5,6 +5,7 @@ import Homepage from "./components/homepage/Homepage"
 import Search from "./pages/Search";
 import LandingPage from "./components/landingpage/LandingPage";
 import DisplayProfile from './components/displayprofile/DisplayProfile';
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/create-profile" element={<CreateProfile />} />
       <Route path="/landing" element={<LandingPage />} />
       <Route path="/profile/:id" element={<DisplayProfile />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }
