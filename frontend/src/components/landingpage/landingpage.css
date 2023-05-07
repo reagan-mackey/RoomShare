@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Public+Sans&display=swap');
 
-* {
-    margin: 0;
-    background-attachment: fixed;
-    font-family: 'Public Sans', sans-serif;
-}
-
 .landing-page {
     width: 100%;
     height: 100%;

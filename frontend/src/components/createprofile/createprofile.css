@@ -119,6 +119,10 @@ select {
     color: white;
 }
 
+.create-profile-container {
+    text-align: center;
+}
+
 *.required {
     background: rgb(255, 255, 167);
 }

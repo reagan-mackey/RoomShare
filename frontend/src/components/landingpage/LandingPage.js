@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { TextField, Grid, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { TextField, Grid, FormControl, InputLabel, Select, MenuItem, CircularProgress } from "@mui/material";
 import "./landingpage.css"
 import { useNavigate, Link } from "react-router-dom";
 
@@ -12,6 +12,7 @@ const LandingPage = () => {
     const [major, setMajor] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     const searchParams = new URLSearchParams();
 
@@ -41,14 +42,30 @@ const LandingPage = () => {
                 if (!response.data.user.city || !response.data.user.state || !response.data.user.gender || !response.data.user.major || !response.data.user.startDate || !response.data.user.endDate) {
                     navigate("/create-profile", { state: response.data.user });
                 }
-
+                setIsLoading(false);
             } catch (error) {
+                setIsLoading(false);
                 navigate("/");
             }
         }
         fetchUser();
     }, [navigate]);
 
+    if (isLoading) {
+        return <>
+            <div className="navbar">
+                <div className="navbar-logo">
+                    <Link to="/landing" style={{ textDecoration: "none" }}>
+                        <h2>r/s</h2>
+                    </Link>
+                </div>
+                <div className="navbar-logout-button">
+                    <button onClick={handleLogout}>log out</button>
+                </div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh" }}><CircularProgress /></div>
+        </>
+    }
 
     return (
         <div className="landing-page">

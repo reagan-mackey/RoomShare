@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Public+Sans&display=swap');
 
-* {
-    margin: 0;
-    background-attachment: fixed;
-    font-family: 'Public Sans', sans-serif;
-}
-
 .display-profile-page {
     width: 100vw;
     height: 100vh;
@@ -107,4 +101,8 @@
 
 button:hover {
     box-shadow: 2px 2px 2px 2px #baa0f1;
+}
+
+.profile-container {
+    text-align: center;
 }
