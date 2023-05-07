@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Public+Sans&display=swap');
+
+*{
+    margin: 0;
+    background-attachment: fixed;
+    background-color: white;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.Homepage{
+    width: 100%;
+    height: 100%;
+}
+
+.navbar{
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-right: 60px;
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+
+.navbar ul{
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.navbar li{
+    width: fit-content;
+    display: inline-block;
+}
+
+.navbar-logo{
+    width: fit-content;
+    height:fit-content;
+}
+
+.navbar-logo h2{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 275%;
+    font-weight: 600;
+    background: linear-gradient(to right, #7F4FE7, #C651E3);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+.navbar-login-button { 
+    margin-left:auto;
+    position: relative;
+}
+
+.navbar-login-button button{
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    background: #7F4FE7;
+    border-radius: 15px;
+    color: white;
+    border: transparent;
+}
+
+.navber-login-button button:hover{
+    cursor: default;
+}
+
+.main-body{
+    width: 25%;
+    height: 400px;
+    margin: 100px;
+    float: left;
+}
+
+.main-message{
+    height: fit-content;
+    width: fit-content;
+    
+}
+
+
+.main-body h1{
+    font-size: 65px;
+    text-align: left;
+}
+
+
+.main-msg-regular{
+    color:#7F4FE7;
+    font-weight: 500;
+}
+
+.main-msg-gradient{
+    font-weight: 500;
+    background: -webkit-linear-gradient(#C651E3, #8854f8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.statement{
+    height: fit-content;
+    width: fit-content;
+    text-align: left;
+    margin-top: 25px;
+    
+}
+
+.statement p{
+    font-size: 18px;
+    font-weight: 600;
+    color: #676767;
+}
+
+.sign-up-button-div{
+    height: 50px;
+    width: 150px;
+}
+
+.sign-up-button{
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    margin-top: 30px;
+    font-size: 20px;
+    float: left;
+    border: transparent;
+    background: -webkit-linear-gradient(left, #C651E3, #8854f8);
+    color: white;
+}
+
+.sign-up-button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.15);
+}
+
+.visual-div{
+    width: 500px;
+    height: 500px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 200px;
+}
+
+.visual-div img{
+    max-width: 90%;
+    height: auto;
+}
