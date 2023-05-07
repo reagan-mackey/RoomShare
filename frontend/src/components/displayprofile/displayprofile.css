@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Public+Sans&display=swap');
+
+*{
+    margin: 0;
+    background-attachment: fixed;
+    background-color: white;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.display-profile-page{
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar{
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-right: 60px;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+
+.navbar-logo h2{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    background: linear-gradient(to right, #7F4FE7, #C651E3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-card-panel{
+    width: 60%;
+    height: 50%;
+    margin-left: 15%;
+    border-radius: 20px;
+    border: 1px solid #C651E3;
+    box-shadow: 5px 10px 10px 5px rgb(127, 79, 231, 0.49);
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 50px;
+}
+
+.user-name{
+    float: left;
+    font-size: 30px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.user-name h2{
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 200;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.user-info{
+    float: right;
+    height: fit-content;
+    width: 50%;
+    align-items: center;
+    justify-items: center;
+}
+
+.user-info p{
+    font-size: 20px;
+    padding-top: 20px;
+    text-align: left;
+    word-wrap: normal;
+}
+
+
+.user-info em{
+    background: linear-gradient(to right, #7F4FE7, #C651E3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: normal;
+}
+
+.back-btn-div{
+    height: fit-content;
+    width: fit-content;
+    margin-top: 25px;
+    margin: auto;
+}
+
+
+.back-btn{
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    margin-top: 30px;
+    font-size: 20px;
+    float: left;
+    border: transparent;
+    background: -webkit-linear-gradient(left, #C651E3, #8854f8);
+    color: white;
+}
+
+button:hover{
+    box-shadow: 2px 2px 2px 2px #baa0f1;
+}
