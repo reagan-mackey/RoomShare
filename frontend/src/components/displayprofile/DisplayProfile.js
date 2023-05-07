@@ -73,7 +73,7 @@ const DisplayProfile = () => {
     }
 
     return (
-        <div className="App">
+        <div className="profile-container">
             <div className="display-profile-page">
                 <div className="navbar">
                     <div className="navbar-logo">

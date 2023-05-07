@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import './App.css';
 import CreateProfile from "./components/createprofile/CreateProfile"
 import Homepage from "./components/homepage/Homepage"
-import Search from "./pages/Search";
+import Search from "./components/Search";
 import LandingPage from "./components/landingpage/LandingPage";
 import DisplayProfile from './components/displayprofile/DisplayProfile';
 import PageNotFound from "./components/PageNotFound";

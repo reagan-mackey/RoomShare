@@ -56,7 +56,7 @@ const CreateProfile = () => {
   };
 
   return (
-    <div className="App">
+    <div className="create-profile-container">
       <div className="profile-page">
         <div className="navbar-logo-newuser">
           <h2>r/s</h2>
