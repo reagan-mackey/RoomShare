@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import "./displayprofile.css"
 
@@ -60,7 +60,9 @@ const DisplayProfile = () => {
         return <>
             <div className="navbar">
                 <div className="navbar-logo">
-                    <h2>r/s</h2>
+                    <Link to="/landing" style={{ textDecoration: "none" }}>
+                        <h2>r/s</h2>
+                    </Link>
                 </div>
                 <div className="navbar-logout-button">
                     <button onClick={handleLogout}>log out</button>
@@ -75,7 +77,9 @@ const DisplayProfile = () => {
             <div className="display-profile-page">
                 <div className="navbar">
                     <div className="navbar-logo">
-                        <h2>r/s</h2>
+                        <Link to="/landing" style={{ textDecoration: "none" }}>
+                            <h2>r/s</h2>
+                        </Link>
                     </div>
                     <div className="navbar-logout-button">
                         <button onClick={handleLogout}>log out</button>

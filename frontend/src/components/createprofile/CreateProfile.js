@@ -37,7 +37,7 @@ const CreateProfile = () => {
     const userDetails = {
       firstName,
       lastName,
-      gender,
+      gender: gender !== "" ? gender : "male",
       university,
       major,
       city,

@@ -68,7 +68,9 @@ const Search = () => {
         return <>
             <div className="navbar">
                 <div className="navbar-logo">
-                    <h2>r/s</h2>
+                    <Link to="/landing" style={{ textDecoration: "none" }}>
+                        <h2>r/s</h2>
+                    </Link>
                 </div>
                 <div className="navbar-logout-button">
                     <button onClick={handleLogout}>log out</button>
@@ -82,7 +84,9 @@ const Search = () => {
         <>
             <div className="navbar">
                 <div className="navbar-logo">
-                    <h2>r/s</h2>
+                    <Link to="/landing" style={{ textDecoration: "none" }}>
+                        <h2>r/s</h2>
+                    </Link>
                 </div>
                 <div className="navbar-logout-button">
                     <button onClick={handleLogout}>log out</button>
