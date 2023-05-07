@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from "react-router-dom";
 import "./createprofile.css"
 
@@ -9,8 +9,8 @@ const CreateProfile = () => {
   const navigate = useNavigate();
   const user = location.state;
 
-  const [firstName, setFirstName] = useState(user.firstName);
-  const [lastName, setLastName] = useState(user.lastName);
+  const [firstName, setFirstName] = useState(user !== null ? user.firstName : "");
+  const [lastName, setLastName] = useState(user !== null ? user.lastName : "");
   const [gender, setGender] = useState("");
   const [university, setUniversity] = useState("");
   const [major, setMajor] = useState("");
@@ -19,6 +19,17 @@ const CreateProfile = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [hobbies, setHobbies] = useState("");
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        await axios.get("/auth/user", { withCredentials: true });
+      } catch (error) {
+        navigate("/");
+      }
+    }
+    fetchUser();
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

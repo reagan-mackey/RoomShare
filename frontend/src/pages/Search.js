@@ -19,6 +19,17 @@ const Search = () => {
     const endDate = searchParams.get("endDate");
 
     useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                await axios.get("/auth/user", { withCredentials: true });
+            } catch (error) {
+                navigate("/");
+            }
+        }
+        fetchUser();
+    }, [navigate]);
+
+    useEffect(() => {
         const fetchResults = async () => {
             try {
                 const response = await axios.get(
@@ -100,6 +111,7 @@ const Search = () => {
                                         {<Typography variant="subtitle1" sx={{ fontFamily: "Public Sans, sans-serif", fontWeight: "bold" }}>
                                             {user.startDate && formatDate(user.startDate)} - {user.endDate && formatDate(user.endDate)}
                                         </Typography>}
+                                        {user.email && <Typography variant="subtitle1" sx={{ fontFamily: "Public Sans, sans-serif", fontWeight: "bold", color: "#7F4FE7" }}>{user.email}</Typography>}
                                     </CardContent>
                                 </Card>
                             </Link>
