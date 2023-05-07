@@ -66,9 +66,9 @@ const CreateProfile = () => {
             <h2 style={{ marginTop: "2rem" }}>Create Profile</h2>
             <div className="profile-personal-info">
               <p><label htmlFor="fname">First Name</label></p>
-              <p> <input type="text" id="fname" name="fname" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input></p>
+              <p> <input type="text" id="fname" name="fname" minLength="2" maxLength="50" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input></p>
               <p><label htmlFor="lname">Last Name</label></p>
-              <p><input type="text" id="lname" name="lname" value={lastName} onChange={(e) => setLastName(e.target.value)}></input></p>
+              <p><input type="text" id="lname" name="lname" minLength="2" maxLength="50" value={lastName} onChange={(e) => setLastName(e.target.value)}></input></p>
               <p><label htmlFor="gender">Gender</label></p>
               <p>
                 <select id="gender" name="gender" value={gender} onChange={(e) => setGender(e.target.value)} required>
@@ -85,13 +85,13 @@ const CreateProfile = () => {
 
             <div className="profile-questions-p2">
               <p> <label htmlFor="unicollege">University Name</label>
-                <input type="text" id="unicollname" name="unicollname" value={university} onChange={(e) => setUniversity(e.target.value)} placeholder="i.e. San Jose State University" required></input> </p>
+                <input type="text" id="unicollname" name="unicollname" minLength="2" maxLength="100" value={university} onChange={(e) => setUniversity(e.target.value)} placeholder="i.e. San Jose State University" required></input> </p>
               <p><label htmlFor="major">Major</label>
-                <input type="text" id="major" name="major" value={major} onChange={(e) => setMajor(e.target.value)} placeholder="i.e. Design" required></input></p>
+                <input type="text" id="major" name="major" minLength="2" maxLength="50" value={major} onChange={(e) => setMajor(e.target.value)} placeholder="i.e. Design" required></input></p>
               <p><label htmlFor="internloc">Internship City</label>
-                <input type="text" id="intern-loc-city" name="intern-loc-city" value={city} onChange={(e) => setCity(e.target.value)} placeholder="i.e. San Jose" required></input> </p>
+                <input type="text" id="intern-loc-city" name="intern-loc-city" minLength="2" maxLength="50" value={city} onChange={(e) => setCity(e.target.value)} placeholder="i.e. San Jose" required></input> </p>
               <p><label htmlFor="internloc">Internship State</label>
-                <input type="text" id="intern-loc-state" name="intern-loc-state" value={state} onChange={(e) => setState(e.target.value)} placeholder="i.e. CA" required></input> </p>
+                <input type="text" id="intern-loc-state" name="intern-loc-state" minLength="2" maxLength="2" value={state} onChange={(e) => setState(e.target.value)} placeholder="i.e. CA" required></input> </p>
               <p className="dates-input"><label htmlFor="startdate">Start Date</label>
                 <input type="date" id="start-date" name="start-date" value={startDate} onChange={(e) => setStartDate(e.target.value)} placeholder="MM/DD/YY" required></input></p>
               <p className="dates-input"><label htmlFor="enddate">End Date</label>
