@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
 });
 
 // Get a user by various search options
-// All are optional, though if a user searches by city, they must also include a state
 router.get("/search", async (req, res) => {
     const { city, state, gender, major, startDate, endDate } = req.query;
 

@@ -1,14 +1,14 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-const CLIENT_URL = "http://localhost:3000/";
+const CLIENT_URL = "http://localhost:3000";
 
 router.get("/google", passport.authenticate("google"));
 
 router.get(
     "/google/callback",
     passport.authenticate("google", {
-        successRedirect: CLIENT_URL,
+        successRedirect: `${CLIENT_URL}/landing`,
         failureRedirect: "/login/failed",
     })
 );
@@ -30,6 +30,7 @@ router.get("/login/success", (req, res) => {
                 lastName: req.user.lastName,
                 email: req.user.email,
                 profilePicture: req.user.profilePicture,
+                university: req.user.university,
                 city: req.user.city,
                 state: req.user.state,
                 gender: req.user.gender,
@@ -38,6 +39,14 @@ router.get("/login/success", (req, res) => {
                 endDate: req.user.endDate
             }
         });
+    }
+});
+
+router.get("/user", (req, res) => {
+    if (req.user) {
+        res.json({ user: req.user });
+    } else {
+        res.status(401).json({ error: "Not authorized" });
     }
 });
 

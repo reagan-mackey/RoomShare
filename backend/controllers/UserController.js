@@ -1,10 +1,11 @@
 const addUser = (User) =>
-    ({ id, email, firstName, lastName }) => {
+    ({ id, email, firstName, lastName, profilePhoto }) => {
         const user = new User({
             id,
             email,
             firstName,
             lastName,
+            profilePhoto,
         });
         return user.save();
     };
@@ -33,12 +34,11 @@ const getUsersBySearch = (User) =>
     async (city, state, gender, major, startDate, endDate) => {
         const query = {};
 
-        if ((city && !state)) {
-            throw new Error("Please include both city and state");
+        if (city) {
+            query.city = city;
         }
 
-        if (city && state) {
-            query.city = city;
+        if (state) {
             query.state = state;
         }
 
@@ -82,4 +82,3 @@ module.exports = (User) => {
         updateUser: updateUser(User),
     };
 };
-
