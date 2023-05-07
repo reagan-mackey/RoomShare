@@ -3,14 +3,15 @@ import "./homepage.css"
 import visualSVG from "./homePage.svg"
 
 const Homepage = () => {
+  const handleLogin = () => {
+    window.location.href = "http://localhost:5000/auth/google";
+  };
+
   return (
     <div className="Homepage">
       <div className="navbar">
         <div className="navbar-logo">
-            <h2>r/s</h2>
-        </div>
-        <div className='navbar-login-button'>
-              <button>log in</button>
+          <h2>r/s</h2>
         </div>
       </div>
       <div className="main-body">
@@ -20,11 +21,11 @@ const Homepage = () => {
           <h1 className="main-msg-regular">roommate</h1>
         </div>
         <div className="statement">
-          <p>made for and by students interning in</p>
-          <p>new cities.</p>
+          <p>made for and by students interning</p>
+          <p>in new cities.</p>
         </div>
         <div className="sign-up-button-div">
-          <button className="sign-up-button">sign up</button>
+          <button className="sign-up-button" onClick={handleLogin}>get started</button>
         </div>
       </div>
       <div className="visual-div">

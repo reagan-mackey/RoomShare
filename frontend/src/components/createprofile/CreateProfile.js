@@ -1,31 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useLocation, useNavigate } from "react-router-dom";
 import "./createprofile.css"
 
-const CreateProfile = () => {
- function submitFields(){
-    document.getElementById("form1").submit();
-    document.getElementById("form2").submit();
-  }
-  return (
-    <div className="profile-page">
-      <div className= "navbar-logo">
-        <h2>r/s</h2>
-      </div>
-      <div className="profile-panel">
-        <h2>Create Profile</h2>
-        <div className="profile-questions">
-          <div className="profile-pic">
+import axios from "axios";
 
-          </div>
-          <div className="profile-personal-info">
-            <form id="form1">
-              <p><label for="fname">First Name</label></p>
-              <p> <input type="text" id="fname" name="fname"></input></p>
-              <p><label for="lname">Last Name</label></p>
-              <p><input type="text" id="lname" name="lname"></input></p>
-              <p><label for="gender">Gender</label></p>
+const CreateProfile = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const user = location.state;
+
+  const [firstName, setFirstName] = useState(user.firstName);
+  const [lastName, setLastName] = useState(user.lastName);
+  const [gender, setGender] = useState("");
+  const [university, setUniversity] = useState("");
+  const [major, setMajor] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [hobbies, setHobbies] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userDetails = {
+      firstName,
+      lastName,
+      gender,
+      university,
+      major,
+      city,
+      state,
+      startDate,
+      endDate,
+      hobbies,
+    };
+
+    try {
+      await axios.patch(`/users/${user.id}`, userDetails);
+      navigate("/landing")
+    } catch (error) {
+      console.error("Error: ", error)
+    }
+  };
+
+  return (
+    <div className="App">
+      <div className="profile-page">
+        <div className="navbar-logo-newuser">
+          <h2>r/s</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="profile-panel" style={{ marginBottom: "3rem" }}>
+            <h2 style={{ marginTop: "2rem" }}>Create Profile</h2>
+            <div className="profile-personal-info">
+              <p><label htmlFor="fname">First Name</label></p>
+              <p> <input type="text" id="fname" name="fname" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input></p>
+              <p><label htmlFor="lname">Last Name</label></p>
+              <p><input type="text" id="lname" name="lname" value={lastName} onChange={(e) => setLastName(e.target.value)}></input></p>
+              <p><label htmlFor="gender">Gender</label></p>
               <p>
-                <select id="gender" name="gender" required>  
+                <select id="gender" name="gender" value={gender} onChange={(e) => setGender(e.target.value)} required>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="non-binary">Non-Binary</option>
@@ -33,33 +68,32 @@ const CreateProfile = () => {
                   <option value="other">Other</option>
                 </select>
               </p>
-            </form>
+            </div>
+
+            <h3 className="clgandintern-info" style={{ marginTop: "2rem" }}>-College and Internship Information-</h3>
+
+            <div className="profile-questions-p2">
+              <p> <label htmlFor="unicollege">University Name</label>
+                <input type="text" id="unicollname" name="unicollname" value={university} onChange={(e) => setUniversity(e.target.value)} placeholder="i.e. San Jose State University" required></input> </p>
+              <p><label htmlFor="major">Major</label>
+                <input type="text" id="major" name="major" value={major} onChange={(e) => setMajor(e.target.value)} placeholder="i.e. Design" required></input></p>
+              <p><label htmlFor="internloc">Internship City</label>
+                <input type="text" id="intern-loc-city" name="intern-loc-city" value={city} onChange={(e) => setCity(e.target.value)} placeholder="i.e. San Jose" required></input> </p>
+              <p><label htmlFor="internloc">Internship State</label>
+                <input type="text" id="intern-loc-state" name="intern-loc-state" value={state} onChange={(e) => setState(e.target.value)} placeholder="i.e. CA" required></input> </p>
+              <p className="dates-input"><label htmlFor="startdate">Start Date</label>
+                <input type="date" id="start-date" name="start-date" value={startDate} onChange={(e) => setStartDate(e.target.value)} placeholder="MM/DD/YY" required></input></p>
+              <p className="dates-input"><label htmlFor="enddate">End Date</label>
+                <input type="date" id="end-date" name="end-date" value={endDate} onChange={(e) => setEndDate(e.target.value)} placeholder="MM/DD/YY" required></input></p>
+              <p><label htmlFor="hobbies">Hobbies</label>
+                <input type="text" id="hobbies" name="hobbies" value={hobbies} onChange={(e) => setHobbies(e.target.value)} placeholder="List any hobbies here!" required></input></p>
+
+              <div className="submit-btn-div">
+                <button className="submit-btn" type="submit" style={{ marginBottom: "2rem" }}>submit</button>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <h3 className="clgandintern-info">-College and Internship Information-</h3>
-
-        <div className="profile-questions-p2">
-          <form id="form2">
-            <p> <label for="unicollege">University/College Name</label>
-            <input type="text" id="unicollname" name="unicollname" placeholder="i.e. San Jose State University" required></input> </p>
-            <p><label for="major">Major</label>
-            <input type="text" id="major" name="major" placeholder="i.e. Design" required></input></p>
-            <p><label for="internloc">Intern Location</label>
-            <input type="text" id="intern-loc" name="intern-loc" placeholder="City, State Abv." required></input> </p>
-            <p className="dates-input"><label for="startdate">Start Date</label>
-            <input type="date" id="start-date" name="start-date" placeholder="MM/DD/YY" required></input></p>
-            <p className="dates-input"><label for="enddate">End Date</label>
-            <input type="date" id="end-date" name="end-date" placeholder="MM/DD/YY" required></input></p>
-            <p><label for="hobbies">Hobbies</label>
-            <input type="text" id="hobbies" name="hobbies" placeholder="List any hobbies here!" required></input></p>
-          </form>
-
-          <div className="submit-btn-div">
-            <button onClick={submitFields} className="submit-btn" type="submit">submit</button>
-          </div>
-        </div>
-       
+        </form>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users")
 
 app.use(
-    cookieSession({ name: "session", keys: ["lama"], maxAge: 259200 })
+    cookieSession({ name: "session", keys: ["lama"], maxAge: 3 * 24 * 60 * 60 * 1000 })
 );
 
 app.use(passport.initialize());
