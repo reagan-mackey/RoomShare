@@ -70,10 +70,10 @@ const LandingPage = () => {
             <div className="search-form">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <TextField label="City" fullWidth value={city} onChange={(e) => setCity(e.target.value)} />
+                        <TextField label="City (i.e. San Jose)" fullWidth value={city} onChange={(e) => setCity(e.target.value)} />
                     </Grid>
                     <Grid item xs={12}>
-                        <TextField label="State" fullWidth value={state} onChange={(e) => setState(e.target.value)} />
+                        <TextField label="State (i.e. CA)" fullWidth value={state} onChange={(e) => setState(e.target.value)} />
                     </Grid>
                     <Grid item xs={12}>
                         <FormControl fullWidth>
@@ -88,7 +88,7 @@ const LandingPage = () => {
                         </FormControl>
                     </Grid>
                     <Grid item xs={12}>
-                        <TextField label="Major" fullWidth value={major} onChange={(e) => setMajor(e.target.value)} />
+                        <TextField label="Major (i.e. Design)" fullWidth value={major} onChange={(e) => setMajor(e.target.value)} />
                     </Grid>
                     <Grid item xs={12}>
                         <TextField label="Start Date" type="date" fullWidth InputLabelProps={{ shrink: true }} value={startDate} onChange={(e) => setStartDate(e.target.value)} />

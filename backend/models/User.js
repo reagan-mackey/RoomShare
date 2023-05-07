@@ -13,6 +13,7 @@ const UserSchema = new mongoose.Schema({
     major: { type: String, required: false },
     startDate: { type: Date, required: false },
     endDate: { type: Date, required: false },
+    hobbies: { type: String, required: false },
 });
 
 const userModel = mongoose.model("User", UserSchema, "User");
