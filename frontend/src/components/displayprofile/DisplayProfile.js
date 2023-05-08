@@ -98,7 +98,7 @@ const DisplayProfile = () => {
                         <p><em>Start Date: </em>{formatDate(user.startDate)}</p>
                         <p><em>End Date: </em>{formatDate(user.endDate)}</p>
                         <p><em>Hobbies: </em>{user.hobbies}</p>
-                        <p style={{ marginBottom: "1rem" }}><em>Contact: </em>{user.email}</p>
+                        <p style={{ marginBottom: "1rem" }}><em>Contact: </em>{user.contact}</p>
                     </div>
                 </div>
 

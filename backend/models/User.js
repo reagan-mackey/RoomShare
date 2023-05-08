@@ -14,6 +14,7 @@ const UserSchema = new mongoose.Schema({
     startDate: { type: Date, required: false },
     endDate: { type: Date, required: false },
     hobbies: { type: String, required: false },
+    contact: { type: String, required: false },
 });
 
 const userModel = mongoose.model("User", UserSchema, "User");
