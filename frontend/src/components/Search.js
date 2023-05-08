@@ -113,7 +113,7 @@ const Search = () => {
                                         {<Typography variant="subtitle1" sx={{ fontFamily: "Public Sans, sans-serif", fontWeight: "bold" }}>
                                             {user.startDate && formatDate(user.startDate)} - {user.endDate && formatDate(user.endDate)}
                                         </Typography>}
-                                        {user.email && <Typography variant="subtitle1" sx={{ fontFamily: "Public Sans, sans-serif", fontWeight: "bold", color: "#7F4FE7" }}>{user.email}</Typography>}
+                                        {user.contact && <Typography variant="subtitle1" sx={{ fontFamily: "Public Sans, sans-serif", fontWeight: "bold", color: "#7F4FE7" }}>{user.contact}</Typography>}
                                     </CardContent>
                                 </Card>
                             </Link>

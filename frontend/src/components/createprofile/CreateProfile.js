@@ -19,6 +19,7 @@ const CreateProfile = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [hobbies, setHobbies] = useState("");
+  const [contact, setContact] = useState(user !== null ? user.email : "")
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -45,6 +46,7 @@ const CreateProfile = () => {
       startDate,
       endDate,
       hobbies,
+      contact,
     };
 
     try {
@@ -98,7 +100,8 @@ const CreateProfile = () => {
                 <input type="date" id="end-date" name="end-date" value={endDate} onChange={(e) => setEndDate(e.target.value)} placeholder="MM/DD/YY" required></input></p>
               <p><label htmlFor="hobbies">Hobbies</label>
                 <input type="text" id="hobbies" name="hobbies" value={hobbies} onChange={(e) => setHobbies(e.target.value)} placeholder="List any hobbies here!" required></input></p>
-
+              <p><label htmlFor="contact">Contact Details</label>
+                <input type="text" id="contact" name="contact" value={contact} onChange={(e) => setContact(e.target.value)} required></input></p>
               <div className="submit-btn-div">
                 <button className="submit-btn" type="submit" style={{ marginBottom: "2rem" }}>submit</button>
               </div>
